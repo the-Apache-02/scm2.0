@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#about},~{::title},~{::script})}">
+<head>
+    <title>About</title>
+</head>
+<body>
+    <div class="container text-3xl bg-slate-600" id="about">
+        <h1>About Page</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus earum eum rerum. Repudiandae ullam et ab, recusandae tempora, cupiditate 
+            quas aut deserunt possimus ratione adipisci eaque, enim nemo corrupti magnam.</p>
+    </div>
+
+    <!-- <div th:replace="${isLoggedin}?~{base::parent(${isLoggedin})}:~{base::test(${isLoggedin})}">
+
+    </div> -->
+    <!-- <div th:replace="~{base::parent(${isLoggedin})}">
+
+    </div> -->
+    <!-- <div th:insert="~{base::parent(${isLoggedin})}">
+
+    </div> -->
+
+    <!-- <div th:insert="~{base::parent(~{::section})}">
+        <section class="text-3xl hover:bg-blue-200">
+            This is the section
+        </section>
+    </div> -->
+</body>
+<script>
+    console.log("about Page")
+</script>
+</html>

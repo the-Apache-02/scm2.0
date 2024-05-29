@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<body class="dark:bg-gray-900 bg-gray-100 dark:text-white">
+    <div data-th-replace="~{navbar::navbar}">
+
+    </div>
+    <div class="mt-20">
+        <section data-th-replace="${content}">
+
+        </section>
+    </div>
+
+
+</body>
+<script data-th-src="@{'/js/script.js'}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div th:fragment="parent(content)">
+        <p>This is from parent class</p>
+        <div th:insert="${content}"></div>
+    </div>
+     <div th:fragment="parent(content)">
+        <p>This is from parent class</p>
+        <div>Is logged in <span th:text="${content}"></span></div>
+    </div> -->
+
+<!-- <div th:fragment="test(content)">
+        <p>This is from test when logged in false</p>
+        <div>Is logged in <span th:text="${content}"></span></div>
+    </div>
+</body>
+</html> -->
