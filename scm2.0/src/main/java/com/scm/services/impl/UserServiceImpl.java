@@ -7,9 +7,11 @@ import java.util.UUID;
 import javax.swing.text.html.Option;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.scm.entities.User;
+import com.scm.helper.AppConstant;
 import com.scm.helper.ResourceNotFoundException;
 import com.scm.repo.UserRepo;
 import com.scm.services.UserService;
@@ -20,11 +22,16 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepo userRepo;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     @Override
     public User createUser(User user) {
         // TODO Auto-generated method stub
         String generatedUserId=UUID.randomUUID().toString();
         user.setUserId(generatedUserId);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        
+        user.setRoleList(List.of(AppConstant.ROLE_USER));
         return userRepo.save(user);
     }
 
